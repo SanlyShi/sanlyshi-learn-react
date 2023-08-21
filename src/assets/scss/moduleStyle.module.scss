@@ -1,0 +1,6 @@
+@use "../../App.scss";
+.moduleScss {
+  background-color: darkcyan;
+  color: App.$TextColor;
+  margin-top: 10px;
+}

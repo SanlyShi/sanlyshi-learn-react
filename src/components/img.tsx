@@ -1,5 +1,5 @@
 import pyy from "../assets/pyy.png";
-function Sanlyshi() {
+function ImgS() {
   return (
     <div>
       <img className="pyy_pic" src={pyy} alt="" />
@@ -7,4 +7,4 @@ function Sanlyshi() {
     </div>
   );
 }
-export default Sanlyshi;
+export default ImgS;

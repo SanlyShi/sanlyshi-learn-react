@@ -1,29 +1,24 @@
-import { useState } from "react";
-import { Link } from "react-router-dom";
-import { Button } from "antd";
+import { Route, Routes } from "react-router-dom";
+import ImgS from "../components/img";
+import Menu from "../components/menu";
+import CssModule from "../components/css";
+import Utils from "../components/utils";
+import RouteEx from "../components/route";
+import UseHooks from "../components/useHooks";
+import AsyncLoadModule from "../components/asyncLoadModule";
+import FirstPage from "./firstPage";
 function Main() {
-  const [name] = useState("sanlyshi");
   return (
-    <div>
-      <h3>
-        wellcome to {name}'s place,please click
-        <span className="mg10">
-          <Link to="/sanlyshi-info">
-            <Button>here</Button>
-          </Link>{" "}
-        </span>
-        to see him !
-      </h3>
-      <h3>
-        or click
-        <span className="mg10">
-          <Link to="/menu">
-            <Button>here</Button>
-          </Link>{" "}
-        </span>
-        to menu !
-      </h3>
-    </div>
+    <Routes>
+      <Route path="/" element={<FirstPage />}></Route>
+      <Route path="/img" element={<ImgS />}></Route>
+      <Route path="/menu" element={<Menu />}></Route>
+      <Route path="/css" element={<CssModule />}></Route>
+      <Route path="/utils" element={<Utils />}></Route>
+      <Route path="/route" element={<RouteEx />}></Route>
+      <Route path="/useHooks" element={<UseHooks />}></Route>
+      <Route path="/asyncLoadModule" element={<AsyncLoadModule />}></Route>
+    </Routes>
   );
 }
 export default Main;
