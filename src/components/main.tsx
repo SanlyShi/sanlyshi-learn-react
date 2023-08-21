@@ -14,6 +14,15 @@ function Main() {
         </span>
         to see him !
       </h3>
+      <h3>
+        or click
+        <span className="mg10">
+          <Link to="/menu">
+            <Button>here</Button>
+          </Link>{" "}
+        </span>
+        to menu !
+      </h3>
     </div>
   );
 }
