@@ -1,5 +1,7 @@
-import { useCallback, useState, useMemo } from "react";
+import { useCallback, useState, useMemo, useEffect } from "react";
 import { Button } from "antd";
+import UseContextC from "./useContext";
+import UseReducerC from "./useReducer";
 function UseHooks() {
   const [count, setCount] = useState<number>(0);
   const memoCount = useMemo(() => {
@@ -10,19 +12,34 @@ function UseHooks() {
     setCount(count + 1);
     setCount(count + 1);
     setCount(count + 1);
+    // console.log("useCallBack方法中的值改变");
     //下面 可以 实现累加3
     // setCount((count) => count + 1);
     // setCount((count) => count + 1);
     // setCount((count) => count + 1);
   }, [count]);
+  useEffect(() => {
+    // console.log("useEffect副作用之count变化了，现在是", count);
+    // const timer = setInterval(()=>{
+    //   //console.log('M')
+    // },1000)
+    // return ()=>{
+    //  // 回调函数可以用作组建销毁时
+    // clearInterval(timer)
+    // }
+    // 如果[]中数据为空，内部方法只会执行一次
+    // }, []);
+  }, [count]);
   return (
     <div>
       <h4>count: {count}</h4>
-      <div className="div_br"></div>
       <h4>memoCount: {memoCount}</h4>
-      <div className="div_br"></div>
       {/* <Button onClick={() => setCount(count + 1)}>Count + 1</Button> */}
       <Button onClick={useCallBackSetCount}>Count + 1</Button>
+      <div className="div_br"></div>
+      <UseContextC></UseContextC>
+      <div className="div_br"></div>
+      <UseReducerC></UseReducerC>
     </div>
   );
 }
