@@ -2,6 +2,7 @@ import { useCallback, useState, useMemo, useEffect } from "react";
 import { Button } from "antd";
 import UseContextC from "./useContext";
 import UseReducerC from "./useReducer";
+import useTitle from "./defineHook";
 function UseHooks() {
   const [count, setCount] = useState<number>(0);
   const memoCount = useMemo(() => {
@@ -18,6 +19,8 @@ function UseHooks() {
     // setCount((count) => count + 1);
     // setCount((count) => count + 1);
   }, [count]);
+  //通过自定义 Hook，可以将组件逻辑提取到可重用的函数中。
+  useTitle("一个自定义hooks标题");
   useEffect(() => {
     // console.log("useEffect副作用之count变化了，现在是", count);
     // const timer = setInterval(()=>{
@@ -40,6 +43,7 @@ function UseHooks() {
       <UseContextC></UseContextC>
       <div className="div_br"></div>
       <UseReducerC></UseReducerC>
+      <div className="div_br"></div>
     </div>
   );
 }

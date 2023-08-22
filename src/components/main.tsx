@@ -7,6 +7,7 @@ import RouteEx from "../components/route";
 import UseHooks from "../components/useHooks";
 import AsyncLoadModule from "../components/asyncLoadModule";
 import FirstPage from "./firstPage";
+import AntdForm from "./antdForm";
 function Main() {
   return (
     <Routes>
@@ -18,6 +19,7 @@ function Main() {
       <Route path="/route" element={<RouteEx />}></Route>
       <Route path="/useHooks" element={<UseHooks />}></Route>
       <Route path="/asyncLoadModule" element={<AsyncLoadModule />}></Route>
+      <Route path="/antdForm" element={<AntdForm />}></Route>
     </Routes>
   );
 }

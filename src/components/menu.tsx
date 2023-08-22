@@ -8,6 +8,7 @@ function Menu() {
     { name: "route", path: "/route" },
     { name: "useHooks", path: "/useHooks" },
     { name: "asyncLoadModule", path: "/asyncLoadModule" },
+    { name: "antdForm", path: "/antdForm" },
   ];
   return (
     <div className="menu">
